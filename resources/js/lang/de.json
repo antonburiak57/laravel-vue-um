@@ -1,0 +1,82 @@
+{
+    "languages": {
+        "en": "Englisch",
+        "de": "Deutsch"
+    },
+    "nav": {
+        "title": "Testaufgabe",
+        "login": "Anmeldung",
+        "user_management": "Benutzerverwaltung",
+        "profile": "Profil",
+        "logout": "Ausloggen"
+    },
+    "about": {
+        "title": "Um"
+    },
+    "not_found": {
+        "title": "404 Nicht gefunden",
+        "goto": "Zur Startseite"
+    },
+    "login": {
+        "title": "Anmeldung",
+        "btn": "Anmeldung",
+        "forgot_password": "Passwort vergessen ?",
+        "not_registered": "Noch nicht registriert ?",
+        "click_here": "Klicken Sie hier",
+        "to_register": "zu registrieren"
+    },
+    "register": {
+        "title": "Registrieren",
+        "btn": "Registrieren",
+        "already_registered": "Bereits registriert ?",
+        "click_here": "Klicken Sie hier",
+        "to_login": "Einloggen"
+    },
+    "forgot_password": {
+        "title": "Passwort vergessen ?",
+        "btn": "Einreichen",
+        "back_to": "Zurück zur Anmeldung"
+    },
+    "reset_password": {
+        "title": "Passwort zurücksetzen ?",
+        "btn": "Zurücksetzen",
+        "back_to": "Zurück zur Anmeldung"
+    },
+    "home": {
+        "title": "Willkommen bei der Testaufgabe",
+        "greetings": "Willkommen, {name}"
+    },
+    "users": {
+        "all_users": "Alle Nutzer",
+        "add_user": "Nutzer hinzufügen",
+        "edit": "Bearbeiten",
+        "delete": "Löschen",
+        "clear": "Klar",
+        "add_new_user": "Neuen Benutzer hinzufügen",
+        "save": "Speichern",
+        "cancel": "Absagen",
+        "user_profile": "{name}s Profil",
+        "update": "Aktualisieren",
+        "change": "Veränderung",
+        "per_page": "Pro Seite",
+        "filter": "Filter",
+        "type_to": "Tippe um zu suchen",
+        "no": "Anz",
+        "first_name": "Vorname",
+        "last_name": "Nachname",
+        "email": "Email",
+        "gender": "Geschlecht",
+        "degree": "Grad",
+        "street": "Straße",
+        "street_no": "Straße Anz",
+        "postal_code": "Postleitzahl",
+        "city": "Stadt",
+        "actions": "Aktionen",
+        "show_lot": "Viel zeigen",
+        "password": "Passwort",
+        "confirm_password": "Passwort bestätigen",
+        "profile": "Profil",
+        "settings": "Einstellungen",
+        "old_password": "Altes Passwort"
+    }
+}

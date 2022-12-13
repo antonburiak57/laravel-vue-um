@@ -2,7 +2,7 @@
   <b-container>
     <b-row class="mb-3">
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
-        <h2>Reset Password</h2>
+        <h2>{{ $t('reset_password.title') }}</h2>
       </b-col>
     </b-row>
 
@@ -21,7 +21,7 @@
             <b-form-input id="password_confirmation" type="password" v-model="resetPasswordData.password_confirmation" />
           </b-form-group>
 
-          <b-button type="submit" variant="info">Reset</b-button>
+          <b-button type="submit" variant="info">{{ $t('reset_password.btn') }}</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -29,7 +29,7 @@
     <b-row>
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
         <h6>
-          <router-link :to="{name: 'Login'}">&laquo; Back To Login</router-link>
+          <router-link :to="{name: 'Login'}">&laquo; {{ $t('reset_password.back_to') }}</router-link>
         </h6>
       </b-col>
     </b-row>

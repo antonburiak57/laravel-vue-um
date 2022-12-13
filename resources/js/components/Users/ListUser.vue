@@ -2,22 +2,22 @@
   <b-container>
     <b-row>
       <b-col cols="8">
-        <h1>All Users</h1>
+        <h1>{{ $t('users.all_users') }}</h1>
       </b-col>
       <b-col cols="4" class="ml-auto text-right">
-        <b-button variant="outline-info" :to="{ name: 'AddUser' }">Add User</b-button>
+        <b-button variant="outline-info" :to="{ name: 'AddUser' }">{{ $t('users.add_user') }}</b-button>
       </b-col>
     </b-row>
 
     <b-row>
       <b-col cols="12">
-        <b-table striped lg hover :items="users" :fields="fields">
+        <b-table striped xl hover :items="users" :fields="fields">
           <template #cell(index)="data">
             {{ data.index + 1 }}
           </template>
           <template #cell(actions)="row">
-            <b-button :to="{name: 'EditUser', params: {id: row.item.id}}" size="sm" variant="primary">Edit</b-button>
-            <b-button @click="deleteUser(row.item.id)" size="sm" variant="danger">Delete</b-button>
+            <b-button :to="{name: 'EditUser', params: {id: row.item.id}}" size="sm" variant="primary">{{ $t('users.edit') }}</b-button>
+            <b-button @click="deleteUser(row.item.id)" size="sm" variant="danger">{{ $t('users.delete') }}</b-button>
           </template>
         </b-table>
       </b-col>
@@ -26,7 +26,7 @@
     <b-row>
       <b-col sm="6" md="3" class="my-1">
         <b-form-group
-          label="Per page"
+          :label="$t('users.per_page')"
           label-for="per-page-select"
           label-cols-sm="6"
           label-cols-md="4"
@@ -57,7 +57,7 @@
       </b-col>
       <b-col md="6" class="my-1">
         <b-form-group
-          label="Filter"
+          :label="$t('users.filter')"
           label-for="filter-input"
           label-cols-sm="3"
           label-align-sm="right"
@@ -69,12 +69,12 @@
               id="filter-input"
               v-model="filter"
               type="search"
-              placeholder="Type to Search"
+              :placeholder="$t('users.type_to')"
               @change="changeFilter"
             ></b-form-input>
 
             <b-input-group-append>
-              <b-button :disabled="!filter" @click="clearFilter">Clear</b-button>
+              <b-button :disabled="!filter" @click="clearFilter">{{ $t('users.clear') }}</b-button>
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
@@ -91,53 +91,53 @@ export default {
       fields: [
         {
           key: 'index',
-          label: 'No'
+          label: this.$t('users.no')
         },
         {
           key: 'first_name',
-          label: 'FirstName',
+          label: this.$t('users.first_name'),
           sortable: true
         }, {
           key: 'last_name',
-          label: 'LastName',
+          label: this.$t('users.last_name'),
           sortable: true
         }, {
           key: 'email',
-          label: 'Email',
+          label: this.$t('users.email'),
           sortable: true
         }, {
           key: 'gender',
-          label: 'Gender',
+          label: this.$t('users.gender'),
           sortable: true
         }, {
-          label: 'Degree',
+          label: this.$t('users.degree'),
           key: 'degree',
           sortable: true
         }, {
-          label: 'Street',
+          label: this.$t('users.street'),
           key: 'street',
           sortable: true
         }, {
-          label: 'StreetNo',
+          label: this.$t('users.street_no'),
           key: 'street_no',
           sortable: true
         }, {
-          label: 'PostalCode',
+          label: this.$t('users.postal_code'),
           key: 'postal_code',
           sortable: true
         }, {
-          label: 'City',
+          label: this.$t('users.city'),
           key: 'city',
           sortable: true
         }, {
-          label: 'Actions',
+          label: this.$t('users.actions'),
           key: 'actions'
         }
       ],
       totalRows: 1,
       currentPage: 1,
       perPage: 5,
-      pageOptions: [5, 10, 15, { value: 100, text: "Show a lot" }],
+      pageOptions: [5, 10, 15, { value: 100, text: this.$t('users.actions') }],
       filter: ''
     }
   },

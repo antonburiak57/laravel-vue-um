@@ -1,8 +1,8 @@
 <template>
-  <b-container>
+  <b-container class="pb-4 mb-4">
     <b-row>
       <b-col>
-        <h2>{{ user.first_name }} {{ user.last_name }}'s Profile</h2>
+        <h2>{{ $t('users.user_profile', {name: `${user.first_name} ${user.last_name}`}) }}</h2>
         <hr>
       </b-col>
     </b-row>
@@ -10,44 +10,44 @@
     <b-row>
       <b-col>
         <b-tabs card>
-          <b-tab title="Profile">
+          <b-tab :title="$t('users.profile')">
             <b-form class="mt-2" @submit="onUpdateProfile">
               <b-row>
                 <b-col lg="6" md="6" sm="6">
-                  <b-form-group label="First Name" label-for="first_name">
-                    <b-form-input size="sm" required id="first_name" v-model="userData.first_name" type="text" />
+                  <b-form-group :label="$t('users.first_name')" label-for="first_name">
+                    <b-form-input size="sm" :placeholder="$t('users.first_name')" required id="first_name" v-model="userData.first_name" type="text" />
                   </b-form-group>
 
-                  <b-form-group label="Last Name" label-for="last_name" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Last Name" type="text" v-model="userData.last_name" />
+                  <b-form-group :label="$t('users.last_name')" label-for="last_name" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.last_name')" type="text" v-model="userData.last_name" />
                   </b-form-group>
 
-                  <b-form-group label="Email" label-for="email">
-                    <b-form-input size="sm" disabled required id="email" type="email" :value="userData.email" />
+                  <b-form-group :label="$t('users.email')" label-for="email">
+                    <b-form-input :placeholder="$t('users.email')" size="sm" disabled required id="email" type="email" :value="userData.email" />
                   </b-form-group>
 
-                  <b-form-group label="Gender" label-for="gender" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Gender" type="text" v-model="userData.gender" />
+                  <b-form-group :label="$t('users.gender')" label-for="gender" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.gender')" type="text" v-model="userData.gender" />
                   </b-form-group>
 
-                  <b-form-group label="Degree" label-for="degree" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Degree" type="text" v-model="userData.degree" />
+                  <b-form-group :label="$t('users.degree')" label-for="degree" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.degree')" type="text" v-model="userData.degree" />
                   </b-form-group>
 
-                  <b-form-group label="Street" label-for="street" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Street" type="text" v-model="userData.street" />
+                  <b-form-group :label="$t('users.street')" label-for="street" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.street')" type="text" v-model="userData.street" />
                   </b-form-group>
 
-                  <b-form-group label="Street No" label-for="street_no" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Street No" type="text" v-model="userData.street_no" />
+                  <b-form-group :label="$t('users.street_no')" label-for="street_no" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.street_no')" type="text" v-model="userData.street_no" />
                   </b-form-group>
 
-                  <b-form-group label="Postal Code" label-for="postal_code" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="Postal Code" type="text" v-model="userData.postal_code" />
+                  <b-form-group :label="$t('users.postal_code')" label-for="postal_code" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.postal_code')" type="text" v-model="userData.postal_code" />
                   </b-form-group>
 
-                  <b-form-group label="City" label-for="city" lg="6" md="6" sm="6">
-                    <b-form-input placeholder="City" type="text" v-model="userData.city" />
+                  <b-form-group :label="$t('users.city')" label-for="city" lg="6" md="6" sm="6">
+                    <b-form-input :placeholder="$t('users.city')" type="text" v-model="userData.city" />
                   </b-form-group>
 
                   <!-- <b-button type="submit" variant="info">Update</b-button> -->
@@ -55,22 +55,22 @@
               </b-row>
             </b-form>
           </b-tab>
-          <b-tab title="Settings">
+          <b-tab :title="$t('users.settings')">
             <b-form class="mt-2" @submit="onChangePassword">
               <b-row>
                 <b-col lg="6" md="6" sm="6">
-                  <b-form-group label="Old Password" label-for="old_password">
-                    <b-form-input size="sm" type="password" required id="old_password" v-model="passwordData.old_password" />
+                  <b-form-group :label="$t('users.old_password')" label-for="old_password">
+                    <b-form-input :placeholder="$t('users.old_password')" size="sm" type="password" required id="old_password" v-model="passwordData.old_password" />
                   </b-form-group>
 
-                  <b-form-group label="Password" label-for="password">
-                    <b-form-input size="sm" required id="password" type="password" v-model="passwordData.password" />
+                  <b-form-group :label="$t('users.password')" label-for="password">
+                    <b-form-input :placeholder="$t('users.password')" size="sm" required id="password" type="password" v-model="passwordData.password" />
                   </b-form-group>
 
-                  <b-form-group label="Confirm Password" label-for="password_confirmation">
-                    <b-form-input size="sm" required id="password_confirmation" type="password" v-model="passwordData.password_confirmation" />
+                  <b-form-group :label="$t('users.confirm_password')" label-for="password_confirmation">
+                    <b-form-input :placeholder="$t('users.confirm_password')" size="sm" required id="password_confirmation" type="password" v-model="passwordData.password_confirmation" />
                   </b-form-group>
-                  <b-button type="submit" variant="info">Change</b-button>
+                  <b-button type="submit" variant="info">{{ $t('users.change') }}</b-button>
                 </b-col>
               </b-row>
             </b-form>

@@ -1,0 +1,82 @@
+{
+    "languages": {
+        "en": "English",
+        "de": "German"
+    },
+    "nav": {
+        "title": "Test Task",
+        "login": "Login",
+        "user_management": "User Management",
+        "profile": "Profile",
+        "logout": "Logout"
+    },
+    "about": {
+        "title": "About"
+    },
+    "not_found": {
+        "title": "404 Not Found",
+        "goto": "Go To Home"
+    },
+    "login": {
+        "title": "Login",
+        "btn": "Login",
+        "forgot_password": "Forgot Password ?",
+        "not_registered": "Not Registered Yet ?",
+        "click_here": "Click Here",
+        "to_register": "to Register"
+    },
+    "register": {
+        "title": "Register",
+        "btn": "Register",
+        "already_registered": "Already Registered ?",
+        "click_here": "Click Here",
+        "to_login": "to Login"
+    },
+    "forgot_password": {
+        "title": "Forgot Password ?",
+        "btn": "Submit",
+        "back_to": "Back To Login"
+    },
+    "reset_password": {
+        "title": "Reset Password ?",
+        "btn": "Reset",
+        "back_to": "Back To Login"
+    },
+    "home": {
+        "title": "Welcome to Test Task",
+        "greetings": "Welcome, {name}"
+    },
+    "users": {
+        "all_users": "All Users",
+        "add_user": "Add User",
+        "edit": "Edit",
+        "delete": "Delete",
+        "clear": "Clear",
+        "add_new_user": "Add New User",
+        "save": "Save",
+        "cancel": "Cancel",
+        "user_profile": "{name}'s Profile",
+        "update": "Update",
+        "change": "Change",
+        "per_page": "Per page",
+        "filter": "Filter",
+        "type_to": "Type to Seaarch",
+        "no": "No",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "gender": "Gender",
+        "degree": "Degree",
+        "street": "Street",
+        "street_no": "Street No",
+        "postal_code": "Postal Code",
+        "city": "City",
+        "actions": "Actions",
+        "show_lot": "Show a lot",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "profile": "Profile",
+        "settings": "Settings",
+        "old_password": "Old Password"
+    }
+}

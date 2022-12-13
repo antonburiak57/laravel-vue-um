@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
-        <h2>Login</h2>
+        <h2>{{ $t('login.title') }}</h2>
       </b-col>
     </b-row>
 
@@ -17,7 +17,7 @@
             <b-form-input required id="password" type="password" v-model="credentials.password"/>
           </b-form-group>
 
-          <b-button type="submit" variant="info">Login</b-button>
+          <b-button type="submit" variant="info">{{ $t('login.btn') }}</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -25,10 +25,10 @@
     <b-row>
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
         <h6>
-          <router-link :to="{ name: 'ForgotPassword' }">Forgot Password ?</router-link>
+          <router-link :to="{ name: 'ForgotPassword' }">{{ $t('login.forgot_password') }}</router-link>
         </h6>
-        <h6>Not Registered Yet ?
-          <router-link :to="{name: 'Register'}">Click Here&nbsp;</router-link>to Register
+        <h6>{{ $t('login.not_registered') }}
+          <router-link :to="{name: 'Register'}">{{ $t('login.click_here') }}&nbsp;</router-link>{{ $t('login.to_register') }}
         </h6>
       </b-col>
     </b-row>

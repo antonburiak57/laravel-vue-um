@@ -2,14 +2,30 @@
   <div class="app">
     <navbar />
     <router-view />
+    <Footer />
   </div>
 </template>
 <script>
 import Navbar from './Navbar'
+import Footer from './Footer'
 import { mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+      defaultLanguage: "en"
+    }
+  },
+  beforeMount() {
+    let lang = !!localStorage.getItem("lang") ?
+      localStorage.getItem("lang") :
+      this.defaultLanguage;
+
+    this.$i18n.locale = lang;
+    this.$i18n.setLocaleMessage(lang, require(`../lang/${lang}.json`));
+  },
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
   computed: {
     ...mapGetters('AuthStore', ['user']),

@@ -1,8 +1,8 @@
 <template>
-  <b-container>
+  <b-container class="mb-4 pb-4">
     <b-row class="pb-3">
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
-        <h2>Register</h2>
+        <h2>{{ $t('register.title') }}</h2>
       </b-col>
     </b-row>
 
@@ -53,15 +53,15 @@
             <b-form-input required id="password_confirmation" type="password" v-model="user.password_confirmation" />
           </b-form-group>
 
-          <b-button type="submit" variant="info">Register</b-button>
+          <b-button type="submit" variant="info">{{ $t('register.btn') }}</b-button>
         </b-form>
       </b-col>
     </b-row>
 
     <b-row>
       <b-col lg="6" md="6" sm="6" offset-lg="3" offset-md="3" offset-sm="3">
-        <h6>Already Registered ?
-          <router-link :to="{name: 'Login'}">Click Here&nbsp;</router-link>to Login
+        <h6>{{ $t('register.already_registered') }}
+          <router-link :to="{name: 'Login'}">{{ $t('register.click_here') }}&nbsp;</router-link>{{ $t('register.to_login') }}
         </h6>
       </b-col>
     </b-row>
