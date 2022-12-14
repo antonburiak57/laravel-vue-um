@@ -15,9 +15,13 @@ use Illuminate\Http\Request;
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('post', 'PostController');
-    Route::resource('user', 'UserController');
     Route::group(['prefix' => 'user'], function () {
         Route::post('profile', 'UserController@updateProfile');
         Route::post('change-password', 'UserController@changePassword');
     });
+});
+Route::group([
+    'middleware' => ['auth', 'admin'],
+], function () {
+    Route::resource('user', 'UserController');
 });

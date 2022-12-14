@@ -8,7 +8,7 @@
           <b-nav-item :to="{name: 'Login'}">{{ $t('nav.login') }}</b-nav-item>
         </template>
         <template v-else>
-          <b-nav-item :to="{ name: 'ListUser' }">{{ $t('nav.user_management') }}</b-nav-item>
+          <b-nav-item v-show="user.role === 1" :to="{ name: 'ListUser' }">{{ $t('nav.user_management') }}</b-nav-item>
           <b-nav-item-dropdown right>
             <template slot="button-content">{{ user.first_name }} {{ user.last_name }}</template>
             <b-dropdown-item :to="{ name: 'Profile' }">{{ $t('nav.profile') }}</b-dropdown-item>

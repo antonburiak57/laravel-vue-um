@@ -27,7 +27,7 @@
                   </b-form-group>
 
                   <b-form-group :label="$t('users.gender')" label-for="gender" lg="6" md="6" sm="6">
-                    <b-form-input :placeholder="$t('users.gender')" type="text" v-model="userData.gender" />
+                    <b-form-select :placeholder="$t('users.gender')" v-model="userData.gender" :options="gender" />
                   </b-form-group>
 
                   <b-form-group :label="$t('users.degree')" label-for="degree" lg="6" md="6" sm="6">
@@ -50,7 +50,7 @@
                     <b-form-input :placeholder="$t('users.city')" type="text" v-model="userData.city" />
                   </b-form-group>
 
-                  <!-- <b-button type="submit" variant="info">Update</b-button> -->
+                  <b-button type="submit" variant="info">Update</b-button>
                 </b-col>
               </b-row>
             </b-form>
@@ -101,7 +101,12 @@ export default {
         street_no: '',
         postal_code: '',
         city: ''
-      }
+      },
+      gender: [
+        { value: '', text: 'Gender' },
+        { value: 'male', text: 'Male' },
+        { value: 'female', text: 'Female' }
+      ]
     }
   },
   computed: {

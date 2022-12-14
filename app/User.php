@@ -32,6 +32,14 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
+    const TYPE_ADMIN = 1;
+    const TYPE_NORMAL = 2;
+
+    public function isAdmin()
+    {
+        return $this->role === self::TYPE_ADMIN;
+    }
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *

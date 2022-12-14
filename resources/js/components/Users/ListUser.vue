@@ -162,10 +162,12 @@ export default {
       User.list(currentPage, perPage, filter).then(response => {
         this.users = response.data.data.data
         this.totalRows = response.data.data.total
+      }).catch(err => {
+        this.$router.go(-1);
       })
     },
     deleteUser (userId) {
-      let e = confirm('Are you Sure to delete this user?')
+      let e = confirm(this.$t('users.delete_confirm'))
       if (e) {
         User.delete(userId).then(response => {
           let index = this.users.findIndex(user => user.id === userId)

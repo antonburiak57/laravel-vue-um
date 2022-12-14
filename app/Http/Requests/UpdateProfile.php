@@ -24,8 +24,15 @@ class UpdateProfile extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email'
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email',
+            'gender' => 'required',
+            'degree' => 'required',
+            'street' => 'required',
+            'street_no' => 'required',
+            'postal_code' => 'required',
+            'city' => 'required'
         ];
     }
 }

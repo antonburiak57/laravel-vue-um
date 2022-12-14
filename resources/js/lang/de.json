@@ -49,6 +49,7 @@
     "users": {
         "all_users": "Alle Nutzer",
         "add_user": "Nutzer hinzufügen",
+        "edit_user": "Benutzer bearbeiten",
         "edit": "Bearbeiten",
         "delete": "Löschen",
         "clear": "Klar",
@@ -77,6 +78,7 @@
         "confirm_password": "Passwort bestätigen",
         "profile": "Profil",
         "settings": "Einstellungen",
-        "old_password": "Altes Passwort"
+        "old_password": "Altes Passwort",
+        "delete_confirm": "Möchten Sie diesen Benutzer wirklich löschen?"
     }
 }

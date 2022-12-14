@@ -23,8 +23,7 @@ const mutations = {
     Storage.remove(['token', 'user'])
   },
   'UPDATEUSER' (state, data) {
-    state.user.name = data.name
-    state.user.email = data.email
+    state.user = data
     Storage.setJSON('user', state.user)
   }
 }

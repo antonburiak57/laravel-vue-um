@@ -9,14 +9,15 @@ use App\Exceptions\CustomException;
 use App\Http\Requests\ChangePassword;
 use App\Http\Requests\UpdateProfile;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\User;
 
 class UserController extends Controller
 {
-    protected function validator(array $data)
+    protected function validator(array $data, string $id)
     {
         return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', $id ? Rule::unique('users')->ignore($id) : 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
@@ -45,7 +46,7 @@ class UserController extends Controller
      */
     public function store(StoreUser $request)
     {
-        $this->validator($request->all())->validate();
+        $this->validator($request->all(), '')->validate();
         User::create($request->all());
         return response()->send('User Added Successfully');
     }
@@ -70,6 +71,7 @@ class UserController extends Controller
      */
     public function update(StoreUser $request, User $user)
     {
+        $this->validator($request->all(), $user->id)->validate();
         $user->update($request->all());
         return response()->send('User Successfully Updated', $user);
     }
@@ -96,7 +98,7 @@ class UserController extends Controller
 
     public function updateProfile(UpdateProfile $request)
     {
-        $request->user()->update($request->only('name'));
+        $request->user()->update($request->all());
         return response()->send('Profile Successfully Updated', $request->user());
     }
 
